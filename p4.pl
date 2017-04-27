@@ -28,3 +28,6 @@
 %   Predicates:
 %     rowBelow(A, B): A is a list representing a row, B is the row below that.
 %     myLast(A, X): X is the last item in row represented by list A
+
+myLast([X], X).
+myLast([_| R], X) :- myLast(R, X).
