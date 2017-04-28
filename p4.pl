@@ -34,3 +34,6 @@ myLast([_| R], X) :- myLast(R, X).
 
 rowBelow([X, Y], [B]) :- B is Y - X, !.
 rowBelow([X, Y| R], [B | T]) :- rowBelow([Y | R], T), B is Y - X.
+
+nextItem([X], X) :- !.
+nextItem(A, N) :- rowBelow(A, R), nextItem(R, M), myLast(A, Z), N is Z + M.
